@@ -93,10 +93,6 @@ body {
     align-items: center;
 }
 
-.wikiHeader {
-    display: flex;
-}
-
 .wikiTitle {
     height: 80px;
 }
