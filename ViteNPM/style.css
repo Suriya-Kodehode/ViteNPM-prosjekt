@@ -10,14 +10,71 @@ body {
     background-size: cover;
     display: flex;
     flex-direction: column;
-
+    justify-content: center;
+    align-items: center;
 }
 
 .header
 
-.meleeArmaments {
-    background: rgba(31, 34, 31, 0.5);
+.wikiPage {
+    background: rgb(5, 14, 8);
     border: 1px black solid;
     height: fit-content;
     width: 1000px;
+    padding: 10px;
+}
+
+.itemCategory {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.itemCategoryHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.itemCategoryHeaderTitle {
+    gap: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.itemCategoryCollapse
+
+.itemContainer {
+    border: 2px rgb(30, 35, 31) solid;
+    height: fit-content;
+    width: fit-content;
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.itemImage {
+    border: 1px rgb(61, 68, 64) solid;
+    height: 125px;
+    width: 125px;
+    margin: 5px;
+}
+
+.itemName {
+    color: rgb(233, 216, 165);
+    font-size: 12px;
+}
+
+.itemName:hover {
+    color: rgb(253, 251, 246);
+    text-decoration: underline;
+    cursor: pointer;
 }
