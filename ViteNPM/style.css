@@ -1,8 +1,8 @@
 * {
-    padding: 0px;
-    margin: 0px;
+  padding: 0px;
+  margin: 0px;
 }
-  
+
 body {
     color: rgb(230, 230, 230);
     font-family: "Rubik", helvetica, arial, sans-serif;
@@ -157,13 +157,13 @@ body {
 }
 
 .itemCategoryHeaderTitle {
-    gap: 5px;
-    display: flex;
-    align-items: center;
+  gap: 5px;
+  display: flex;
+  align-items: center;
 }
 
 .itemCategoryCollapse {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .itemContainer {
