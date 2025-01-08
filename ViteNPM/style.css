@@ -1,0 +1,23 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+  
+body {
+    color: rgb(230, 230, 230);
+    background-color: rgb(0, 0, 0);
+    background: url(./image/EldenRingDLC.png) no-repeat fixed top;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.header
+
+.meleeArmaments {
+    background: rgba(31, 34, 31, 0.5);
+    border: 1px black solid;
+    height: fit-content;
+    width: 1000px;
+}
