@@ -14,22 +14,37 @@ body {
     align-items: center;
 }
 
-.header
-
-.wikiPage {
-    background: rgb(5, 14, 8);
-    border: 1px black solid;
-    height: fit-content;
-    width: 1000px;
-    padding: 10px;
+.header {
+    background: rgb(30, 12, 27);
+    height: 46px;
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
-.itemCategory {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 10px;
+.logo {
+    height: 40px;
+    margin-left: 18px;
+}
+
+.wikiPage {
+    background: rgba(5, 14, 8, 0.9);
+    border: 1px black solid;
+    height: 100%;
+    width: 800px;
+    padding: 30px;
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.itemCategory {
+    background: rgba(255, 255, 255, 0.02);
+    border: 2px rgb(30, 35, 31) solid;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .itemCategoryHeader {
@@ -44,18 +59,17 @@ body {
     align-items: center;
 }
 
-.itemCategoryCollapse
+.itemCategoryCollapse {
+    cursor: pointer;
+}
 
 .itemContainer {
-    border: 2px rgb(30, 35, 31) solid;
-    height: fit-content;
-    width: fit-content;
     padding: 10px 20px;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row-reverse;
 }
+
 .item {
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
