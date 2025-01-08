@@ -20,19 +20,77 @@ body {
     width: 100%;
     margin-bottom: 50px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
 .logo {
     height: 40px;
-    margin-left: 18px;
+    margin-left: 15px;
 }
 
-/* .searchBar
+.nav {
+    margin-right: 15px;
+    gap: 5px;
+    display: flex;
+    align-items: center;
+}
 
-.startWiki
+.searchBar {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid;
+    border-color: rgba(255, 255, 255, 0.5);
+    border-radius: 3px;
+    outline: none;
+    height: 32px;
+    width: 250px;
+    padding: 0px 15px;
+    gap: 5px;
+    display: flex;
+    align-items: center;
+}
 
-.signIn */
+.searchBar:hover {
+    border: 1px white solid;
+}
+
+.searchBar:focus {
+    border: 1px white solid;
+}
+
+.startWiki {
+    color: rgb(255, 255, 255);
+    background: none;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    height: 36px;
+    width: fit-content;
+    padding: 0px 15px;
+    gap: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.startWiki:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.signIn {
+    background: rgb(255, 197, 0);
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    height: 36px;
+    width: fit-content;
+    padding: 0px 15px;
+    gap: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .wikiHeader {
     display: flex;
