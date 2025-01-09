@@ -265,7 +265,9 @@ a {
   background: rgba(5, 14, 8, 0.9);
   border: 1px black solid;
   display: flex;
+  flex-flow: column;
   justify-content: center;
+  align-items: center;
   height: 100%;
   width: 800px;
   padding: 30px;
@@ -275,5 +277,11 @@ a {
 .edited-history-container ul {
   display: block;
   padding: 1rem;
+  color: white;
+}
+li a {
+    text-decoration: none;
+    color: inherit;
+    cursor: default;
 }
 /* /Edit History */
