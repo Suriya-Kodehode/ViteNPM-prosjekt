@@ -258,3 +258,30 @@ a {
 .close:hover {
   color: rgb(253, 251, 246);
 }
+
+
+/* Edit History */
+.edited-history-container {
+  background: rgba(5, 14, 8, 0.9);
+  border: 1px black solid;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 800px;
+  padding: 30px;
+  margin: 2rem 0 0 0;
+}
+
+.edited-history-container ul {
+  display: block;
+  padding: 1rem;
+  color: white;
+}
+li a {
+    text-decoration: none;
+    color: inherit;
+    cursor: default;
+}
+/* /Edit History */
