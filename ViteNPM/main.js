@@ -16,7 +16,7 @@ function toggleCollapse(event) {
 
   const isHidden = itemContainer.style.display === "none";
 
-  itemContainer.style.display = isHidden ? "flex" : "none";
+  itemContainer.style.display = isHidden ? "flex" : "test";
   collapse.textContent = isHidden ? "[Collapse]" : "[Expand]";
 }
 
