@@ -49,12 +49,49 @@ popupOverlay.addEventListener("click", () => {
   popupOverlay.style.display = "none"; // Hide the popup
 });
 
-// Prevent clicks inside the popup from closing it
-document.querySelector(".popup").addEventListener("click", (e) => {
-  e.stopPropagation();
+window.addEventListener("click", (event) => {
+  if (event.target === infoPopup) {
+    infoPopup.style.display = "none";
+  }
 });
 
-// Add event listener to the close button to hide the popup
-closePopupButton.addEventListener("click", () => {
-  popupOverlay.style.display = "none"; // Hide the popup
+// -------------------------------------------------------------------------------------------
+import axios from 'axios';
+import * as cheerio from 'cheerio';
+
+// URL of the revision history page using All Origins proxy
+const url = 'https://eldenring.fandom.com/wiki/Melee_Armaments?action=history';
+const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
+
+axios.get(proxyUrl).then((response) => {
+  // console.log('Data fetched successfully:', response.data);
+
+  const $ = cheerio.load(response.data);
+  // console.log('Data loaded into cheerio:', $.html());
+
+  // Extract the edit information
+  const edits = $('form#mw-history-compare');
+  // console.log('Edits extracted:', edits.length);
+
+  const editHistory = document.getElementById('edit-history');
+
+  if (!editHistory) {
+    console.error('Edit history not found');
+    return;
+  }
+
+edits.find('.mw-history-compareselectedversions').remove();
+edits.find('span:contains("cur"):contains("prev") a').remove();
+edits.find('span:contains("prev")').remove();
+edits.find('span:contains("cur")').remove();
+edits.find('span:has(a:contains("→‎top"))').remove();
+const filteredContent = edits.html();
+
+  const listItem = document.createElement('li');
+  listItem.innerHTML = filteredContent;
+  editHistory.appendChild(listItem);
+}).catch((error) => {
+  console.error(`Error fetching the page: ${error}`);
 });
+// /------------------------------------------------------------------------------------------
+
