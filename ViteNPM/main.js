@@ -9,28 +9,36 @@ function toggleCollapse() {
 
 collapse.addEventListener("click", toggleCollapse);
 
+const popupOverlay = document.getElementById("popupOverlay");
+const closePopupButton = document.getElementById("closePopup");
+const popupContent = document.getElementById("popupContent");
 const itemNames = document.querySelectorAll(".itemName");
-const infoPopup = document.getElementById("infoPopup");
-const closePopup = document.getElementById("closePopup");
 
-itemNames.forEach((itemName) => {
-  itemName.addEventListener("click", () => {
-    const itemTitle = itemName.textContent;
-    const itemDetails = `This is more information about ${itemTitle}.`;
+// Add event listener to item names to show the popup
+itemNames.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    // Prevent the click from propagating to the overlay
+    e.stopPropagation();
 
-    const popupContent = document.querySelector(".popup-content p");
-    popupContent.textContent = itemDetails;
+    // Set the popup content dynamically based on the clicked item
+    popupContent.textContent = `More information about: ${item.textContent}`;
 
-    infoPopup.style.display = "flex";
+    // Show the popup
+    popupOverlay.style.display = "flex";
   });
 });
 
-closePopup.addEventListener("click", () => {
-  infoPopup.style.display = "none";
+// Add event listener to the overlay to close the popup
+popupOverlay.addEventListener("click", () => {
+  popupOverlay.style.display = "none"; // Hide the popup
 });
 
-window.addEventListener("click", (event) => {
-  if (event.target === infoPopup) {
-    infoPopup.style.display = "none";
-  }
+// Prevent clicks inside the popup from closing it
+document.querySelector(".popup").addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+
+// Add event listener to the close button to hide the popup
+closePopupButton.addEventListener("click", () => {
+  popupOverlay.style.display = "none"; // Hide the popup
 });
