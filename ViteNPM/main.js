@@ -1,13 +1,21 @@
-const collapse = document.querySelector(".itemCategoryCollapse");
-function toggleCollapse() {
-  const itemContainer = document.querySelector(".itemContainer");
-  itemContainer.style.display =
-    itemContainer.style.display === "none" ? "flex" : "none";
-  collapse.textContent =
-    itemContainer.style.display === "none" ? "[Expand]" : "[Collapse]";
+const collapses = document.querySelectorAll(".itemCategoryCollapse");
+
+function toggleCollapse(event) {
+  const collapse = event.target;
+  const itemContainer = collapse
+    .closest(".itemCategory")
+    .querySelector(".itemContainer");
+
+  const isHidden = itemContainer.style.display === "none";
+
+  itemContainer.style.display = isHidden ? "flex" : "none";
+  collapse.textContent = isHidden ? "[Collapse]" : "[Expand]";
 }
 
-collapse.addEventListener("click", toggleCollapse);
+// Add event listeners to all collapse elements
+collapses.forEach((collapse) => {
+  collapse.addEventListener("click", toggleCollapse);
+});
 
 const popupOverlay = document.getElementById("popupOverlay");
 const closePopupButton = document.getElementById("closePopup");
