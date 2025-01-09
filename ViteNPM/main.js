@@ -32,14 +32,23 @@ const closePopupButton = document.getElementById("closePopup");
 const popupContent = document.getElementById("popupContent");
 const itemNames = document.querySelectorAll(".itemName");
 
+const exceptions = {
+  "Beast Claw": "https://eldenring.fandom.com/wiki/Beast_Claw_(weapon)"
+};
+
 // Add event listener to item names to show the popup
 itemNames.forEach((item) => {
   item.addEventListener("click", (e) => {
     // Prevent the click from propagating to the overlay
     e.stopPropagation();
 
-    const itemName = item.textContent.trim().replace(/\s+/g, '_');
-    const url = `https://eldenring.fandom.com/wiki/${itemName}`;
+    const itemName = item.textContent.trim();
+    let url;
+    if (exceptions[itemName]) {
+      url = exceptions[itemName];
+    } else {
+      url = `https://eldenring.fandom.com/wiki/${itemName.replace(/\s+/g, '_')}`
+    }
     window.open(url, '_blank');
 
     // Set the popup content dynamically based on the clicked item
