@@ -1,5 +1,7 @@
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
+import axios from 'axios';
+import * as cheerio from 'cheerio';
 
 NProgress.start();
 NProgress.inc();
@@ -36,6 +38,10 @@ itemNames.forEach((item) => {
     // Prevent the click from propagating to the overlay
     e.stopPropagation();
 
+    const itemName = item.textContent.trim().replace(/\s+/g, '_');
+    const url = `https://eldenring.fandom.com/wiki/${itemName}`;
+    window.open(url, '_blank');
+
     // Set the popup content dynamically based on the clicked item
     popupContent.textContent = `More information about: ${item.textContent}`;
 
@@ -56,8 +62,6 @@ window.addEventListener("click", (event) => {
 });
 
 // -------------------------------------------------------------------------------------------
-import axios from 'axios';
-import * as cheerio from 'cheerio';
 
 // URL of the revision history page using All Origins proxy
 const url = 'https://eldenring.fandom.com/wiki/Melee_Armaments?action=history';
