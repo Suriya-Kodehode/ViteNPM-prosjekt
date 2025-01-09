@@ -1,3 +1,11 @@
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
+
+NProgress.start();
+NProgress.inc();
+NProgress.set(0.5);
+NProgress.done();
+
 const collapses = document.querySelectorAll(".itemCategoryCollapse");
 
 function toggleCollapse(event) {
