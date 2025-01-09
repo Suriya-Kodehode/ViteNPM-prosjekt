@@ -81,26 +81,21 @@ axios.get(proxyUrl).then((response) => {
   // console.log('Data loaded into cheerio:', $.html());
 
   // Extract the edit information
-  const edits = $('form#mw-history-compare');
+  const edits = $('li.mw-history-histlinks');
   // console.log('Edits extracted:', edits.length);
 
-  const editHistory = document.getElementById('edit-history');
+  const editHistory = document.getElementById('edit-history')
 
-  if (!editHistory) {
-    console.error('Edit history not found');
-    return;
-  }
+  edits.each((index, element) => {
+    const timestamp = $(element).find('a.mw-changeslist-date').text();
+    const user = $(element).find('a.mw-userlink').text();
+    const summary = $(element).find('span.comment').text() || 'No summary';
+    // console.log(`Timestamp: ${timestamp}\nUser: ${user}\nSummary: ${summary}\n`);
 
-edits.find('.mw-history-compareselectedversions').remove();
-edits.find('span:contains("cur"):contains("prev") a').remove();
-edits.find('span:contains("prev")').remove();
-edits.find('span:contains("cur")').remove();
-edits.find('span:has(a:contains("→‎top"))').remove();
-const filteredContent = edits.html();
-
-  const listItem = document.createElement('li');
-  listItem.innerHTML = filteredContent;
-  editHistory.appendChild(listItem);
+    const listItem = document.createElement('li');
+    listItem.textContent = `Timestamp: ${timestamp}, User: ${user}, Summary: ${summary}`
+    editHistory.appendChild(listItem);
+  });
 }).catch((error) => {
   console.error(`Error fetching the page: ${error}`);
 });
