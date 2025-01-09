@@ -1,32 +1,52 @@
-const collapse = document.querySelector(".itemCategoryCollapse");
-function toggleCollapse() {
-  const itemContainer = document.querySelector(".itemContainer");
-  itemContainer.style.display =
-    itemContainer.style.display === "none" ? "flex" : "none";
-  collapse.textContent =
-    itemContainer.style.display === "none" ? "[Expand]" : "[Collapse]";
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
+
+NProgress.start();
+NProgress.inc();
+NProgress.set(0.5);
+NProgress.done();
+
+const collapses = document.querySelectorAll(".itemCategoryCollapse");
+
+function toggleCollapse(event) {
+  const collapse = event.target;
+  const itemContainer = collapse
+    .closest(".itemCategory")
+    .querySelector(".itemContainer");
+
+  const isHidden = itemContainer.style.display === "none";
+
+  itemContainer.style.display = isHidden ? "flex" : "none";
+  collapse.textContent = isHidden ? "[Collapse]" : "[Expand]";
 }
 
-collapse.addEventListener("click", toggleCollapse);
+// Add event listeners to all collapse elements
+collapses.forEach((collapse) => {
+  collapse.addEventListener("click", toggleCollapse);
+});
 
+const popupOverlay = document.getElementById("popupOverlay");
+const closePopupButton = document.getElementById("closePopup");
+const popupContent = document.getElementById("popupContent");
 const itemNames = document.querySelectorAll(".itemName");
-const infoPopup = document.getElementById("infoPopup");
-const closePopup = document.getElementById("closePopup");
 
-itemNames.forEach((itemName) => {
-  itemName.addEventListener("click", () => {
-    const itemTitle = itemName.textContent;
-    const itemDetails = `More information about ${itemTitle}.`;
+// Add event listener to item names to show the popup
+itemNames.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    // Prevent the click from propagating to the overlay
+    e.stopPropagation();
 
-    const popupContent = document.querySelector(".popup-content p");
-    popupContent.textContent = itemDetails;
+    // Set the popup content dynamically based on the clicked item
+    popupContent.textContent = `More information about: ${item.textContent}`;
 
-    infoPopup.style.display = "flex";
+    // Show the popup
+    popupOverlay.style.display = "flex";
   });
 });
 
-closePopup.addEventListener("click", () => {
-  infoPopup.style.display = "none";
+// Add event listener to the overlay to close the popup
+popupOverlay.addEventListener("click", () => {
+  popupOverlay.style.display = "none"; // Hide the popup
 });
 
 window.addEventListener("click", (event) => {

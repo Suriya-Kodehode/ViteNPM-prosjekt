@@ -4,198 +4,259 @@
 }
 
 body {
-    color: rgb(230, 230, 230);
-    font-family: "Rubik", helvetica, arial, sans-serif;
-    background-color: rgb(0, 0, 0);
-    background: url(./image/EldenRingDLC_dark.jpg) no-repeat fixed top;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  color: rgb(230, 230, 230);
+  font-family: "Rubik", helvetica, arial, sans-serif;
+  background-color: rgb(0, 0, 0);
+  background: url(./image/Elden_Ring_DLC_dark.jpg) no-repeat fixed top;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  color: rgb(233, 216, 165);
 }
 
 .header {
-    background: rgb(30, 12, 27);
-    height: 46px;
-    width: 100%;
-    margin-bottom: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background: rgb(30, 12, 27);
+  height: 46px;
+  width: 100%;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-    height: 40px;
-    margin-left: 15px;
+  height: 40px;
+  margin-left: 15px;
+  cursor: pointer;
 }
 
 .nav {
-    margin-right: 15px;
-    gap: 5px;
-    display: flex;
-    align-items: center;
+  margin-right: 15px;
+  gap: 5px;
+  display: flex;
+  align-items: center;
 }
 
 .searchBar {
-    color: white;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid;
-    border-color: rgba(255, 255, 255, 0.5);
-    border-radius: 3px;
-    outline: none;
-    height: 32px;
-    width: 250px;
-    padding: 0px 15px;
-    gap: 5px;
-    display: flex;
-    align-items: center;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid;
+  border-color: rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  outline: none;
+  height: 32px;
+  width: 250px;
+  padding: 0px 15px;
+  gap: 5px;
+  display: flex;
+  align-items: center;
 }
 
 .searchBar:hover {
-    border: 1px white solid;
+  border: 1px white solid;
 }
 
 .searchBar:focus {
-    border: 1px white solid;
+  border: 1px white solid;
 }
 
 .startWiki {
-    color: rgb(255, 255, 255);
-    background: none;
-    border: none;
-    border-radius: 3px;
-    outline: none;
-    height: 36px;
-    width: fit-content;
-    padding: 0px 15px;
-    gap: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  color: rgb(255, 255, 255);
+  background: none;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  height: 36px;
+  width: fit-content;
+  padding: 0px 15px;
+  gap: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .startWiki:hover {
-    background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .signIn {
-    background: rgb(255, 197, 0);
-    border: none;
-    border-radius: 3px;
-    outline: none;
-    height: 36px;
-    width: fit-content;
-    padding: 0px 15px;
-    gap: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background: rgb(255, 197, 0);
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  height: 36px;
+  width: fit-content;
+  padding: 0px 15px;
+  gap: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .wikiTitle {
-    height: 80px;
+  height: 100px;
+  cursor: pointer;
 }
 
 /* .wikiNav */
 
 .wikiPage {
-    background: rgba(5, 14, 8, 0.75);
-    border: 1px black solid;
-    height: fit-content;
-    width: 800px;
-    padding: 30px;
-    margin: 10px;
-    gap: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  background: rgba(5, 14, 8, 0.75);
+  border: 1px black solid;
+  height: fit-content;
+  width: fit-content;
+  max-width: 840px;
+  padding: 30px;
+  margin: 10px;
+  margin-bottom: 100px;
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .itemCategoryInfo {
-    border: rgb(61, 68, 64) solid;
-    border-width: 0px 0px 1px 0px;
-    width: 100%;
-    padding-bottom: 10px;
+  border: rgb(61, 68, 64) solid;
+  border-width: 0px 0px 1px 0px;
+  width: 100%;
+  padding-bottom: 5px;
 }
 
 .itemCategoryInfoHeader {
-    gap: 10px;
-    display: flex;
-    flex-direction: column;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .itemCategoryInfoTitle {
-    font-family: "Crimson Pro";
-    font-size: 40px;
-    font-weight: 500;
-    letter-spacing: 2px;
+  font-family: "Crimson Pro";
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 .itemCategoryInfoList {
-    font-family: "Crimson Pro";
-    font-size: 36px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    margin-top: 50px;
+  font-family: "Crimson Pro";
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: 30px;
+}
+
+.itemCategoryInfoContent {
+  line-height: 28px;
 }
 
 .itemCategory {
-    background: rgba(255, 255, 255, 0.02);
-    border: 2px rgb(30, 35, 31) solid;
-    display: flex;
-    flex-direction: column;
+  background: rgba(255, 255, 255, 0.02);
+  border: 2px rgb(30, 35, 31) solid;
+  display: flex;
+  flex-direction: column;
 }
 
 .itemCategoryHeader {
-    border: rgb(30, 35, 31) solid;
-    border-width: 0px 0px 2px 0px;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  border: rgb(30, 35, 31) solid;
+  border-width: 0px 0px 2px 0px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .itemCategoryHeaderTitle {
+  color: rgb(233, 216, 165);
   gap: 5px;
   display: flex;
   align-items: center;
 }
 
 .itemCategoryCollapse {
+  color: rgb(233, 216, 165);
   cursor: pointer;
 }
 
 .itemContainer {
-    padding: 15px 20px;
-    display: flex;
+  padding: 15px 20px;
+  gap: 5px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .item {
-    margin: 5px;
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  /* border: 1px black solid; */
+  /* margin: 5px; */
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .itemImage {
-    border: 1px rgb(61, 68, 64) solid;
-    height: 125px;
-    width: 125px;
-    cursor: pointer;
+  border: 1px rgb(61, 68, 64) solid;
+  height: 125px;
+  width: 125px;
+  cursor: pointer;
 }
 
 .itemName {
-    color: rgb(233, 216, 165);
-    font-size: 12px;
-    padding: 15px 5px;
-    cursor: pointer;
+  color: rgb(233, 216, 165);
+  font-size: 12px;
+  text-align: center;
+  width: 123px;
+  padding: 10px 0px;
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .itemName:hover {
-    color: rgb(253, 251, 246);
-    text-decoration: underline;
+  color: rgb(253, 251, 246);
+  text-decoration: underline;
+}
+
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  position: relative;
+  background-color: rgb(30, 35, 31);
+  color: rgb(233, 216, 165);
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.close {
+  position: absolute;
+  top: 18px;
+  right: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(233, 216, 165);
+  cursor: pointer;
+}
+
+.close:hover {
+  color: rgb(253, 251, 246);
 }
 
 
