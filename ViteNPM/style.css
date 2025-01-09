@@ -284,4 +284,9 @@ li a {
     color: inherit;
     cursor: default;
 }
+bdi {
+  text-decoration:underline;
+  color: blue;
+  text-shadow: 0 0 5px black;
+}
 /* /Edit History */
