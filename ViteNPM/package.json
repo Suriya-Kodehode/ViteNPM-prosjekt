@@ -12,8 +12,13 @@
     "vite": "^6.0.5"
   },
   "dependencies": {
+<<<<<<< HEAD
     "axios": "^1.7.9",
     "cheerio": "^1.0.0",
     "date-fns": "^4.1.0"
+=======
+    "date-fns": "^4.1.0",
+    "nprogress": "^0.2.0"
+>>>>>>> main
   }
 }
