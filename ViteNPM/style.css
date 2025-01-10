@@ -196,25 +196,33 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 }
 
 .itemImage {
   border: 1px rgb(61, 68, 64) solid;
   height: 125px;
   width: 125px;
-  cursor: pointer;
 }
 
 .itemName {
   color: rgb(233, 216, 165);
   font-size: 12px;
   text-align: center;
+  line-height: 16px;
   width: 123px;
   padding: 10px 0px;
-  cursor: pointer;
+  gap: 8px;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.itemName img {
+    height: 9px;
+    width: 25px;
 }
 
 .itemName:hover {
